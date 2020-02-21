@@ -8,12 +8,6 @@ import (
 	"time"
 )
 
-func init() {
-	// we are assuming that seeding with time is safe enough for the purposes of this program
-	// there are risks with doing this, where it is important that someone cannot determine the seed
-	rand.Seed(time.Now().UTC().UnixNano())
-}
-
 func main() {
 	if len(os.Args) < 2 {
 		panic(fmt.Sprintf("N was not passed in when executing program."))
@@ -29,6 +23,10 @@ func main() {
 	if N < 0 {
 		panic(fmt.Sprintf("N: %s is not a positive integer.", input))
 	}
+
+	// we are assuming that seeding with time is safe enough for the purposes of this program
+	// there are risks with doing this, where it is important that someone cannot determine the seed
+	rand.Seed(time.Now().UTC().UnixNano())
 
 	output := GeneratePopulatedSlice(int(N))
 	output = FisherYatesShuffle(output)
