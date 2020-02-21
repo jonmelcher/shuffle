@@ -9,7 +9,7 @@ import (
 func main() {
 
 	if len(os.Args) < 2 {
-		panic(fmt.Sprintf("N not passed in when executing program."))
+		panic(fmt.Sprintf("N was not passed in when executing program."))
 	}
 
 	input := os.Args[1]
