@@ -15,7 +15,6 @@ func init() {
 }
 
 func main() {
-
 	if len(os.Args) < 2 {
 		panic(fmt.Sprintf("N was not passed in when executing program."))
 	}

@@ -28,4 +28,11 @@ Using the language of your choice implement the following program named Shuffle:
 - a `shuffle` binary has been committed for convenience
 
 ## running the program
-- execute the `shuffle` binary with a single integer argument `N`
+- execute the `shuffle` binary with a single integer argument `N`, eg. `./bin/shuffle 5` from the root project directory
+
+## example output
+```bash
+./bin/shuffle 5 #[3 5 4 2 1]
+./bin/shuffle 0 #[]
+./bin/shuffle -1 #panic: N: -1 is not a positive integer.
+```
