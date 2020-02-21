@@ -30,5 +30,7 @@ func main() {
 
 	output := GeneratePopulatedSlice(int(N))
 	output = FisherYatesShuffle(output)
-	fmt.Println(output)
+	for _, n := range output {
+		fmt.Println(n)
+	}
 }

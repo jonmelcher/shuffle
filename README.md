@@ -30,9 +30,6 @@ Using the language of your choice implement the following program named Shuffle:
 ## running the program
 - execute the `shuffle` binary with a single integer argument `N`, eg. `./bin/shuffle 5` from the root project directory
 
-## example output
-```bash
-./bin/shuffle 5 #[3 5 4 2 1]
-./bin/shuffle 0 #[]
-./bin/shuffle -1 #panic: N: -1 is not a positive integer.
-```
+## output
+- each integer will be outputted to stdout on an individual line
+- in the case where there are no integers, no output will occur
