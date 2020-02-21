@@ -2,9 +2,17 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
 	"os"
 	"strconv"
+	"time"
 )
+
+func init() {
+	// we are assuming that seeding with time is safe enough for the purposes of this program
+	// there are risks with doing this, where it is important that someone cannot determine the seed
+	rand.Seed(time.Now().UTC().UnixNano())
+}
 
 func main() {
 
@@ -23,9 +31,7 @@ func main() {
 		panic(fmt.Sprintf("N: %s is not a positive integer.", input))
 	}
 
-	output := GenerateSlice(int(N))
-
-	for _, val := range output {
-		fmt.Println(val)
-	}
+	output := GeneratePopulatedSlice(int(N))
+	output = FisherYatesShuffle(output)
+	fmt.Println(output)
 }
